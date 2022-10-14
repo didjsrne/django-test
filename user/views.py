@@ -45,10 +45,8 @@ def sign_up_view(request):
                               {'error': '사용자가 이미 존재합니다.'})  # 중복이름 있으니 로그인페이지 다시 띄움, 경고메세지도 넣음 좋을듯
 
 
-
-                UserModel.objects.create_user(username=username, password=password, phone=phone,
-                                              address=address)
-                return redirect('/login')  # 회원가입이 완료되었으므로 로그인 페이지로 이동
+            UserModel.objects.create_user(username=username, password=password, phone=phone,                                      address=address)
+            return redirect('/login')  # 회원가입이 완료되었으므로 로그인 페이지로 이동
             
             
 def login_view(request):
